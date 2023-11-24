@@ -1,0 +1,9 @@
+---
+- name: Grep for accepted connections from /var/log/secure
+  hosts: 192.168.11.14
+  remote_user: root
+
+  tasks:
+  - name: Read content of /var/log/secure
+    shell:
+      cat /var/log/secure | grep -i accepted  >> report.txt
